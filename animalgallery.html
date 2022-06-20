@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aaron Craig</title>
+  <link rel="stylesheet" href="mainStyle.css">
+</head>
+<body>
+<header>
+  <h1>My Cat and Dog</h1>
+</header>
+<hr>
+<div id="app">
+  <button @click="toggleMenu">Menu</button>
+
+  <table v-if="isVisible" class="openMenu">
+    <tr><th colspan="5"><h3>Table of contents</h3></th></tr>
+    <tr>
+      <td><a href="index.html">Home Page</a></td>
+      <td><a href="resume.html">Resume</a></td>
+      <td><a href="contactform.html">Contact Form</a></td>
+      <td><a href="calculator.html">Calculator App</a></td>
+      <td><a href="animalgallery.html">My Cat and Dog</a></td>
+    </tr>
+  </table>
+</div>
+<hr>
+<table class="galleryCenter">
+  <tr>
+    <td><video src="goosevid.mp4"
+               preload
+               controls
+               loop
+               class="gallery"></video></td>
+    <td><video src="mootvid.mp4"
+               preload
+               controls
+               loop
+               class="gallery"></video></td>
+  </tr>
+<tr><td><img src="pic1.jpg" class="gallery"></td>
+<td><img src="pic3.jpg" class="gallery"></td>
+</tr>
+<tr>
+  <td><img src="pic2.jpg" class="gallery"></td>
+  <td><img src="pic4.jpg" class="gallery"></td>
+</tr>
+
+</table>
+
+
+
+
+<script src="https://unpkg.com/vue@3"></script>
+<script>
+  let app = Vue.createApp({
+    data: function() {
+      return {
+        isVisible: false
+      }
+    },
+    methods: {
+      toggleMenu() {
+        this.isVisible =! this.isVisible
+      }
+    }
+  })
+  app.mount('#app')
+</script>
+<footer>
+  <!--Created by Aaron Craig, 2022  -->
+</footer>
+</body>
+</html>

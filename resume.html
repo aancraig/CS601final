@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aaron Craig</title>
+  <link rel="stylesheet" href="mainStyle.css">
+</head>
+<body>
+<header>
+  <h1>Resume</h1>
+</header>
+<hr>
+<div id="app">
+  <button @click="toggleMenu">Menu</button>
+
+  <table v-if="isVisible" class="openMenu">
+    <tr><th colspan="5"><h3>Table of contents</h3></th></tr>
+    <tr>
+      <td><a href="index.html">Home Page</a></td>
+      <td><a href="resume.html">Resume</a></td>
+      <td><a href="contactform.html">Contact Form</a></td>
+      <td><a href="calculator.html">Calculator App</a></td>
+      <td><a href="animalgallery.html">My Cat and Dog</a></td>
+    </tr>
+  </table>
+</div>
+<hr>
+<h3>Work History</h3>
+<table id="resume">
+  <tr>
+    <th>Years</th>
+    <th>Job title</th>
+    <th>Location</th>
+  </tr>
+  <tr>
+    <td>2022-Present</td>
+    <td>Cyber security analyst</td>
+    <td>Remote</td>
+  </tr>
+  <tr>
+    <td>2019-2022</td>
+    <td>Computer repair tech</td>
+    <td>New Orleans, LA</td>
+  </tr>
+  <tr>
+    <td>2017-2019</td>
+    <td>Mail Clerk</td>
+    <td>Ponchatoula, LA</td>
+  </tr>
+  <tr>
+    <td>2010-2017</td>
+    <td>Medic</td>
+    <td>Shreveport, LA</td>
+  </tr>
+</table>
+<hr>
+<h3>Education</h3>
+<table id="resume">
+  <tr>
+    <th>Year Awarded</th>
+    <th>Degree</th>
+    <th>University</th>
+  </tr>
+  <tr>
+    <td>In progress</td>
+    <td>MS Software Development</td>
+    <td>Boston Univeristy</td>
+  </tr>
+  <tr>
+    <td>2022</td>
+    <td>BS Information Technology</td>
+    <td>American Military University</td>
+  </tr>
+  <tr>
+    <td>2021</td>
+    <td>BA English</td>
+    <td>American Military University</td>
+  </tr>
+  <tr>
+    <td>2014</td>
+    <td>AS Nursing</td>
+    <td>Community College of the Air Force</td>
+  </tr>
+</table>
+<hr>
+<h3>Certifications</h3>
+<table id="resume">
+  <tr>
+    <th>Year Awarded</th>
+    <th>Certification Name</th>
+    <th>Governing Body</th>
+  </tr>
+  <tr>
+    <td>2019</td>
+    <td>Microsoft Technology Associate (Security)</td>
+    <td>Microsoft</td>
+  </tr>
+  <tr>
+    <td>2018</td>
+    <td>Security +</td>
+    <td>CompTIA</td>
+  </tr>
+  <tr>
+    <td>2011</td>
+    <td>EMT-Basic</td>
+    <td>NREMT</td>
+  </tr>
+</table>
+
+<script src="https://unpkg.com/vue@3"></script>
+<script>
+  let app = Vue.createApp({
+    data: function() {
+      return {
+        isVisible: false
+      }
+    },
+    methods: {
+      toggleMenu() {
+        this.isVisible =! this.isVisible
+      }
+    }
+  })
+  app.mount('#app')
+</script>
+<footer>
+  <!--Created by Aaron Craig, 2022  -->
+</footer>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aaron Craig</title>
+  <link rel="stylesheet" href="mainStyle.css">
+</head>
+<body>
+<header>
+  <h1>Contact Form</h1>
+</header>
+<hr>
+<div id="app">
+  <button @click="toggleMenu">Menu</button>
+
+  <table v-if="isVisible" class="openMenu">
+    <tr><th colspan="5"><h3>Table of contents</h3></th></tr>
+    <tr>
+      <td><a href="index.html">Home Page</a></td>
+      <td><a href="resume.html">Resume</a></td>
+      <td><a href="contactform.html">Contact Form</a></td>
+      <td><a href="calculator.html">Calculator App</a></td>
+      <td><a href="animalgallery.html">My Cat and Dog</a></td>
+    </tr>
+  </table>
+</div>
+<hr>
+
+<h3>
+  Please fill out your contact information:
+</h3>
+<form class="center" action="mailto:ancraig@bu.edu" method="post">
+  Enter your first name:
+  <input type="text" id="firstname" name="firstName" pattern="[A-Za-z]{2,}" placeholder="First name" required><br>
+  Enter your last name:
+  <input type="text" id="lastname" name="lastName" pattern="[A-Za-z]{2,}" placeholder="Last name" required><br>
+  Eneter your email address:
+  <input type="text" id="email" name="email"   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="E-mail" required><br>
+  What is your opinion on the final season of Game of Thrones?<br>
+  <input type="radio" id="one" name="liked" value="liked">
+  <label for="one">I liked it</label><br>
+  <input type="radio" id="two" name="meh" value="meh">
+  <label for="two">I have no strong feelings about it</label><br>
+  <input type="radio" id="three" name="hate" value="hate">
+  <label for="three">I hated it</label><br>
+  <input type="radio" id="four" name="confused" value="confused">
+  <label for="four">Why is that a question on a contact form?</label><br>
+  Why are you trying to contact me?<br>
+  <input type="checkbox" id="Employment" name="Employment" value="Employment">
+  <label for="Employment">Employment</label><br>
+  <input type="checkbox" id="Idolize" name="Idolize" value="Idolize">
+  <label for="Idolize">I idolize you</label><br>
+  <input type="checkbox" id="Lost" name="Lost" value="Lost">
+  <label for="Lost">I don't know where I am, please send help</label><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+
+<script src="https://unpkg.com/vue@3"></script>
+<script>
+  let app = Vue.createApp({
+    data: function() {
+      return {
+        isVisible: false
+      }
+    },
+    methods: {
+      toggleMenu() {
+        this.isVisible =! this.isVisible
+      }
+    }
+  })
+  app.mount('#app')
+</script>
+<footer>
+  <!--Created by Aaron Craig, 2022  -->
+</footer>
+</body>
+</html>

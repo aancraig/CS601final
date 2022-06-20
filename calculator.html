@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aaron Craig</title>
+  <link rel="stylesheet" href="mainStyle.css">
+</head>
+<body>
+<header>
+  <h1>Calculator</h1>
+</header>
+<hr>
+<div id="app">
+  <button @click="toggleMenu">Menu</button>
+
+  <table v-if="isVisible" class="openMenu">
+    <tr><th colspan="5"><h3>Table of contents</h3></th></tr>
+    <tr>
+      <td><a href="index.html">Home Page</a></td>
+      <td><a href="resume.html">Resume</a></td>
+      <td><a href="contactform.html">Contact Form</a></td>
+      <td><a href="calculator.html">Calculator App</a></td>
+      <td><a href="animalgallery.html">My Cat and Dog</a></td>
+    </tr>
+  </table>
+</div>
+<hr>
+
+<script>
+  function calculator() {
+    var valueOne =parseInt(document.querySelector("#value1").value);
+    var valueTwo =parseInt(document.querySelector("#value2").value);
+    var operator = document.querySelector("#operator").value;
+    var calculate;
+
+    if (operator == "add") {
+      calculate= valueOne+valueTwo;
+    }
+    else if (operator == "min") {
+      calculate= valueOne-valueTwo;
+    }
+    else if (operator == "mul") {
+      calculate= valueOne*valueTwo;
+    }
+    else if (valueTwo == 0) {
+      calculate = "You cannot divide by zero!"
+    }
+    else if (operator == "div") {
+      calculate= valueOne/valueTwo;
+    }
+    document.querySelector("#output").innerHTML=calculate;
+  }
+
+</script>
+
+<form class="center">
+  Value 1: <input type="text" id="value1"><br>
+  Value 2: <input type="text" id="value2"><br>
+  <select id="operator">
+    <option value="add">Add</option>
+    <option value="min">Subtract</option>
+    <option value="div">Divide</option>
+    <option value="mul">Multiply</option>
+  </select><br>
+  <button type="button" onclick="calculator()">Calculate</button>
+  Your output:<h1>
+  <div id="output"></h1>
+  </div>
+</form>
+<br>
+<div id="output">
+
+
+<script src="https://unpkg.com/vue@3"></script>
+<script>
+  let app = Vue.createApp({
+    data: function() {
+      return {
+        isVisible: false
+      }
+    },
+    methods: {
+      toggleMenu() {
+        this.isVisible =! this.isVisible
+      }
+    }
+  })
+  app.mount('#app')
+</script>
+<footer>
+  <!--Created by Aaron Craig, 2022  -->
+</footer>
+</body>
+</html>
